@@ -1,0 +1,279 @@
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 2em 3%;
+    max-width: 100%; /* Allow the timeline to take the full width */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #1fc4b6;
+    top: 4em;
+    bottom: 4em;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-entry {
+    position: relative;
+    padding: 2em 2em;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-entry h3 {
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.timeline-entry p {
+    font-size: 0.9em;
+    color: #fff;
+}
+
+/* Specific styling for the bullet points */
+.timeline-entry ul.workexp {
+    padding-left: 1.5em;  /* Ensures proper indentation */
+    padding-right: 1.5em; /* Ensures proper indentation */
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-bottom: 1em;
+}
+
+.timeline-entry:nth-child(odd) {
+    left: 0;
+    text-align: left;
+    padding-right: 2em;
+    
+}
+
+.timeline-entry:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 2em;
+    
+}
+
+.timeline-entry::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #21b2a6;
+    top: 20px;
+    left: -10px;
+    z-index: 1;
+}
+
+.timeline-entry:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline-entry:nth-child(odd)::before {
+    left: calc(100% - 10px);
+}
+
+.timeline-entry:nth-child(odd)::after,
+.timeline-entry:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    background-color: #21b2a6;
+    top: 10;
+    left: 50%;
+    z-index: 0;
+}
+
+.timeline-entry:nth-child(even)::after {
+    left: 0;
+}
+
+.timeline-entry:nth-child(odd)::after {
+    right: 0;
+}
+
+/* Ensure Solid icons use the correct Font Awesome set */
+.icon.solid:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* This ensures it uses the solid version */
+}
+
+.icon.regular:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400; /* This ensures it uses the regular version */
+}
+
+.work-location {
+    font-size: 5em; /* Adjust the value as needed */
+    margin-bottom: 5px; /* Optional: Adds a bit of space below the location/date */
+}
+
+.work-date {
+    margin-left: 10px; /* Adjust the value as needed */
+}
+
+.work-location-date {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em; /* Increase the font size for location and date */
+    margin-bottom: 0.8em; /* Adjust spacing below the location and date */
+}
+
+.work-location-date i {
+    margin-right: 0.3em; /* Add some spacing between the icon and text */
+}
+
+.work-location-date span {
+    margin-left: 1em; /* Add some spacing between location and date */
+}
+
+
+.work-exp-left, .work-exp-right {
+    flex: 1;
+    min-width: 300px; /* Ensure both sections have the same minimum width */
+    margin-right: 2em; /* Space between the two columns */
+}
+
+/* Ensure the right side content does not overflow */
+.work-exp-right {
+    flex-grow: 1;
+    margin-right: 0;
+}
+
+
+.workexp li {
+    font-style:normal;
+    margin-bottom: 0.5em; 
+    /* Add a small gap between each bullet point */
+
+}
+
+/* navigationigation Bar Styling */
+#navigation {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background 0.6s ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navigation ul li {
+    margin: 0 20px;
+}
+
+#navigation ul li a {
+    color: rgba(224, 118, 224, 0.8);
+    text-decoration: none !important;
+    font-size: 1.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-style: normal; /* Ensure the font-style is normal here */
+}
+
+#navigation ul li a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+#navigation ul li a:active {
+    background: none;
+    transform: scale(1.05);
+}
+
+#navigation ul li a:active,
+#navigation ul li a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-entry {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: left;
+    }
+
+    .timeline-entry:nth-child(odd),
+    .timeline-entry:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-entry::before {
+        left: 20px;
+    }
+
+    .timeline-entry::after {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeline-entry {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .timeline-entry h3 {
+        font-size: 1em;
+    }
+
+    .timeline-entry p {
+        font-size: 0.8em;
+    }
+}
+
+/* Landing */
+
+body.landing #page-wrapper {
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+
+body.landing #footer {
+    background-color: rgba(29, 36, 42, 0.9);
+}
+
+body.is-mobile.landing #page-wrapper {
+    background: none;
+}
+
+body.is-mobile.landing #banner,
+body.is-mobile.landing .wrapper.style4 {
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/banner.png");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/work.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.is-mobile.landing #footer {
+    background-color: #1d242a;
+}
