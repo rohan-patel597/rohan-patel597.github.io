@@ -4039,7 +4039,7 @@ body.is-preload #banner:after {
 }
 
 #about p {
-	font-style: italic;
+	font-style: normal;
 }
 
 #project .inner {
