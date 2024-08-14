@@ -1,5 +1,5 @@
 node_modules/
-
+Backup script/
 #ignore the specific html file and txt file
 elements.html
 generic.html
