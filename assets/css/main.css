@@ -3955,7 +3955,7 @@ body.is-preload #banner:after {
     /* Prevents the image from repeating */
     color: white;
     /* Changes text color to white for better readability */
-    padding: 146px 6px;
+    padding: 6px 6px;
     /* Adds some padding to give space around the text */
     text-align: center;
     /* Centers the text */
@@ -3965,6 +3965,16 @@ body.is-preload #banner:after {
 
 #about p {
 	font-style: normal;
+}
+
+@media screen and (max-width: 736px) {
+
+    #about {
+        padding: 6em 2em 4em 2em;
+        height: auto;
+        min-height: 0;
+    }
+
 }
 
 #project .inner {
@@ -3990,66 +4000,6 @@ body.is-preload #banner:after {
 	font-style: italic;
 }
 
-@media screen and (max-width: 736px) {
-
-    #about {
-        padding: 6em 2em 4em 2em;
-        height: auto;
-        min-height: 0;
-    }
-
-}
-
-/* 
-#about .inner {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	max-width: 45em;
-}
-
-	#about .inner header {
-		-moz-order: 1;
-		-webkit-order: 1;
-		-ms-order: 1;
-		order: 1;
-		padding-right: 3em;
-		width: 70%;
-	}
-
-		#about .inner header p {
-			color: inherit;
-		}
-
-	#about .inner .actions {
-		-moz-order: 2;
-		-webkit-order: 2;
-		-ms-order: 2;
-		order: 2;
-		width: 30%;
-	}
-
-	@media screen and (max-width: 980px) {
-
-		#about .inner {
-			display: block;
-			text-align: center;
-		}
-
-			#about .inner header {
-				padding-right: 0;
-				width: 100%;
-			}
-
-			#about .inner .actions {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 20em;
-				width: 100%;
-			}
-
-	} */
 
 @media screen and (max-width: 736px) {
 
