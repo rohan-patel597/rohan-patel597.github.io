@@ -3955,7 +3955,7 @@ body.is-preload #banner:after {
     /* Prevents the image from repeating */
     color: white;
     /* Changes text color to white for better readability */
-    padding: 246px 164px;
+    padding: 146px 6px;
     /* Adds some padding to give space around the text */
     text-align: center;
     /* Centers the text */
@@ -3988,6 +3988,16 @@ body.is-preload #banner:after {
 
 #project p {
 	font-style: italic;
+}
+
+@media screen and (max-width: 736px) {
+
+    #about {
+        padding: 6em 2em 4em 2em;
+        height: auto;
+        min-height: 0;
+    }
+
 }
 
 /* 
