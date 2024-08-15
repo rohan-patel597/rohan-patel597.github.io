@@ -2,10 +2,11 @@
 .timeline {
     position: relative;
     margin: 0 auto;
-    padding: 2em 3%;
+    padding: 2em 0;
     max-width: 100%; /* Allow the timeline to take the full width */
 }
 
+/* This is creating the vertical line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -13,15 +14,21 @@
     background-color: #1fc4b6;
     top: 4em;
     bottom: 4em;
+        /* Centre the line */
     left: 50%;
-    margin-left: -2px;
+    /* margin-left: -2px; */
+    transform: translateX(15.75px);
+    transition: all 1s ease; 
+    /* Smooth transition on screen resize */
 }
 
 .timeline-entry {
     position: relative;
-    padding: 2em 2em;
+    padding: 1em;
     width: 50%;
     box-sizing: border-box;
+    margin-left: 20px;
+    text-align: left;
 }
 
 .timeline-entry h3 {
@@ -43,6 +50,23 @@
     margin-bottom: 1em;
 }
 
+/* This creative the decorative marker */
+.timeline-entry::before {
+    content: '';
+    position:absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #21b2a6;
+    top: 2em;
+    left: -20px;
+    /* Position the marker at the center */
+    /* left: calc(50% - 20px); */
+    transform: translateX(1%);
+    z-index: 1;
+}
+
 .timeline-entry:nth-child(odd) {
     left: 0;
     text-align: left;
@@ -57,18 +81,6 @@
     
 }
 
-.timeline-entry::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #21b2a6;
-    top: 20px;
-    left: -10px;
-    z-index: 1;
-}
 
 .timeline-entry:nth-child(even)::before {
     left: -10px;
@@ -184,7 +196,7 @@
     color: rgba(224, 118, 224, 0.8);
     text-decoration: none !important;
     font-size: 1.2em;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.6s ease;
     font-style: normal; /* Ensure the font-style is normal here */
 }
 
@@ -204,12 +216,37 @@
     text-decoration: none;
 }
 
+/* Mobile view: stack entries vertically */
+
 @media screen and (max-width: 768px) {
+    .timeline {
+        padding: 2em 0;
+        position: relative;
+        margin: 0 auto;
+        max-width: 100%;
+    }
     .timeline-entry {
         width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
+        /* width: calc(100% - 10px);  */
+        /* Full width minus space for the vertical line */
+        float: none;
         text-align: left;
+        /* padding-left: 100px; */
+        padding-left: 20px;
+        padding-right: 0;
+        margin-left: 24.25px;
+    }
+
+    .timeline-entry::before {
+        left: 25px;
+        top: 10px;
+        transform: none;
+    }
+
+    .timeline-entry.left,
+    .timeline-entry.right {
+        text-align: left;
+        padding-left: 50px; /* Added padding for better alignment */
     }
 
     .timeline-entry:nth-child(odd),
@@ -217,20 +254,27 @@
         left: 0;
     }
 
-    .timeline-entry::before {
-        left: 20px;
-    }
-
-    .timeline-entry::after {
-        left: 0;
+    .timeline::before {
+        left: 10px; /* Move the line to the left on smaller screens */
+        transform: none;
     }
 }
 
+
 @media screen and (max-width: 480px) {
     .timeline-entry {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: 40px;
+        padding-right: 40px;
     }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    /* .timeline-entry::before {
+    left: 300px;
+    top: 10px;
+    } */
 
     .timeline-entry h3 {
         font-size: 1em;
@@ -239,7 +283,10 @@
     .timeline-entry p {
         font-size: 0.8em;
     }
+
 }
+
+
 
 /* Landing */
 

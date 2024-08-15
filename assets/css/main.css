@@ -3945,7 +3945,7 @@ body.is-preload #banner:after {
 /* about Section */
 
 #about {
-    background-image: url('../../images/bg1.jpg');
+    background-image: url('../../images/work1.jpg');
     /* Replace with your image URL */
     background-size: cover;
     /* Ensures the image covers the entire section */
@@ -3955,7 +3955,7 @@ body.is-preload #banner:after {
     /* Prevents the image from repeating */
     color: white;
     /* Changes text color to white for better readability */
-    padding: 340px 100px;
+    padding: 246px 164px;
     /* Adds some padding to give space around the text */
     text-align: center;
     /* Centers the text */
