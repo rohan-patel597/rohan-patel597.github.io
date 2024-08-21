@@ -3965,6 +3965,21 @@ body.is-preload #banner:after {
 
 #about p {
 	font-style: normal;
+    /* text-align: left; */
+}
+/* Added the List item for about section */
+#about ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* text-align:left; */
+    /* display: flex; */
+    /* justify-content: flex-end; */
+}
+
+#about ul li {
+    margin: 0 20px;
+    /* text-align: left; */
 }
 
 @media screen and (max-width: 736px) {
@@ -3997,7 +4012,14 @@ body.is-preload #banner:after {
 }
 
 #project p {
-	font-style: italic;
+	font-style: normal;
+    text-align: left;
+}
+
+#project h3 {
+    padding: 4px;
+    font-size: 1.35em;
+    line-height: 1.75em;
 }
 
 
