@@ -1,5 +1,7 @@
 node_modules/
 Backup script/
+package-lock.json
+package.json
 #ignore the specific html file and txt file
 elements.html
 generic.html
